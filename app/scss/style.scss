@@ -1,3 +1,16 @@
-header {
-  border: red 1px solid;
+$font-stack:    Helvetica, sans-serif;
+$background-color: #f1f1f1;
+$defautBarColor : #2196F3;
+$excedBarColor : red;
+.progressBar{
+  display: block;
+  background-color: $background-color !important;
+  margin: 10px;
+
+  .progress {
+    color: #ffffff;
+    height: 20px;
+  }
 }
+.defaultColor{background-color: $defautBarColor}
+.limitExcedColor{background-color: $excedBarColor}

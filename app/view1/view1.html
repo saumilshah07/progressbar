@@ -1,1 +1,13 @@
-<progress-bar></progress-bar>
+
+
+<div ng-repeat="value in barData.bars track by $index">
+    <progress-bar value="value" max="barData.limit" newval="newvalue" position="$index" ></progress-bar>
+</div>
+
+<select name="selectBar" id="selectBar" ng-model="selectedBar">
+    <option ng-repeat="value in barData.bars track by $index" value="{{$index}}" ng-selected="$first" >progress bar {{$index + 1}}</option>
+</select>
+
+
+<button ng-repeat="val in barData.buttons track by $index" ng-click="updateNewValue(val)">{{val}}</button>
+

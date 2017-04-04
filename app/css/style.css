@@ -1,4 +1,15 @@
-header {
-  border: red 1px solid; }
+.progressBar {
+  display: block;
+  background-color: #f1f1f1 !important;
+  margin: 10px; }
+  .progressBar .progress {
+    color: #ffffff;
+    height: 20px; }
+
+.defaultColor {
+  background-color: #2196F3; }
+
+.limitExcedColor {
+  background-color: red; }
 
 /*# sourceMappingURL=style.css.map */

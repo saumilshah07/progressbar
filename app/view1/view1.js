@@ -9,6 +9,27 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['$scope', 'endpointService',function($scope,endpointService) {
+
+   // $scope.barData = endpointService.getProgressBarData();
+    $scope.newvalue = 0;
+    //Get bar data from endpoint
+    endpointService.getProgressBarData()
+        .then( function(response) {
+          console.log(response.data);
+          $scope.barData = response.data;
+          console.log($scope.barData);
+
+        }, function(error){
+
+        });
+    $scope.updateNewValue = function (val) {
+
+        $scope.$broadcast('progressBarNewValue',{
+            newValue : val,
+            barName  : $scope.selectedBar
+        });
+
+    }
 
 }]);
