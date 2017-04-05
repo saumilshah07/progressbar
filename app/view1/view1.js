@@ -14,6 +14,7 @@ angular.module('myApp.view1', ['ngRoute'])
    // $scope.barData = endpointService.getProgressBarData();
     $scope.newvalue = 0;
     //Get bar data from endpoint
+  /*
     endpointService.getProgressBarData()
         .then( function(response) {
           console.log(response.data);
@@ -22,7 +23,9 @@ angular.module('myApp.view1', ['ngRoute'])
 
         }, function(error){
 
-        });
+        }); */
+   $scope.barData =  endpointService.getProgressBarData();
+     
     $scope.updateNewValue = function (val) {
 
         $scope.$broadcast('progressBarNewValue',{
